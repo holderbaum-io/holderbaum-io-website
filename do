@@ -40,6 +40,7 @@ task_clean() {
 
 task_deploy() {
   prepare_ci
+  set -x
   lftp -c "\
     set ftps:initial-prot ''; \
     set ftp:ssl-force true; \

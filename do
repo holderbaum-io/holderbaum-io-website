@@ -45,6 +45,7 @@ task_deploy() {
     set ftps:initial-prot ''; \
     set ftp:ssl-force true; \
     set ftp:ssl-protect-data true; \
+    set dns:order 'inet inet6'; \
     open ftp://$DEPLOY_USER:$DEPLOY_PASS@www151.your-server.de:21; \
     mirror -eRv build .; \
     quit;"

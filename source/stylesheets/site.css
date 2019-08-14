@@ -12,6 +12,11 @@ body {
   position: relative;
 }
 
+body > * {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
 *, *:before, *:after {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
@@ -35,4 +40,31 @@ h2, h2 * {
 
 h3, h3 * {
   font-size: 1rem;
+}
+
+header > nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+header > nav > img {
+  display: inline;
+  width: 200px;
+
+}
+
+header > nav > ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+header > nav > ul > li {
+  display: inline;
+}
+
+header > nav > ul > li a {
+  text-decoration: none;
+  vertical-align: text-bottom;
 }

@@ -1,0 +1,10 @@
+language: ruby
+branches:
+  only:
+  - master
+script:
+  - ./do build
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: ./do deploy

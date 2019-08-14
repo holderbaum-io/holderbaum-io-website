@@ -43,6 +43,7 @@ task_clean() {
 
 task_deploy() {
   prepare_ci
+  env
   exit 0
 }
 

@@ -7,6 +7,22 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title || "Middleman" %></title>
+    <style>
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/stylesheets/fonts/montserrat-regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/stylesheets/fonts/montserrat-bold.ttf) format('truetype');
+}
+    </style>
     <%= stylesheet_link_tag "site" %>
   </head>
   <body>

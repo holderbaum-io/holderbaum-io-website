@@ -3,7 +3,8 @@
 set -eu
 
 ensure_ruby() {
-  local bundler_version="$(tail -n1 Gemfile.lock |tr -d ' ')"
+  local bundler_version
+  bundler_version="$(tail -n1 Gemfile.lock |tr -d ' ')"
   if ! gem list -q bundler |grep -q "$bundler_version" >/dev/null;
   then
     gem install "bundler:$bundler_version"
@@ -12,16 +13,12 @@ ensure_ruby() {
 }
 
 function prepare_ci {
-  return 0
-  export encrypted_9e05e58bd4ea_key
-  export encrypted_9e05e58bd4ea_iv
-  openssl aes-256-cbc \
-    -K "$encrypted_9e05e58bd4ea_key" \
-    -iv "$encrypted_9e05e58bd4ea_iv" \
-    -in deploy/ssh.enc \
-    -out deploy/ssh \
-    -d
-  chmod 600 deploy/ssh
+  if [[ -z "${TRAVIS:=}" ]]; then return 0; fi
+
+  sudo apt-get \
+    install \
+    -y \
+    lftp
 }
 
 task_serve() {
@@ -43,8 +40,13 @@ task_clean() {
 
 task_deploy() {
   prepare_ci
-  env
-  exit 0
+  lftp -c "\
+    set ftps:initial-prot ''; \
+    set ftp:ssl-force true; \
+    set ftp:ssl-protect-data true; \
+    open ftp://$DEPLOY_USER:$DEPLOY_PASS@www151.your-server.de:21; \
+    mirror -eRv build .; \
+    quit;"
 }
 
 usage() {

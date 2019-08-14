@@ -2,6 +2,7 @@ language: ruby
 branches:
   only:
   - master
+install: true
 script:
 - "./do build"
 deploy:

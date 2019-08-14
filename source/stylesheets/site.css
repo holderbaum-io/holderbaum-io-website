@@ -6,15 +6,34 @@ html {
 }
 
 body {
-  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
   background-color: white;
   min-height: 100%;
   position: relative;
 }
 
 body > * {
+  width: 980px;
   max-width: 980px;
   margin: 0 auto;
+}
+
+body > main {
+  flex: 1;
+}
+
+body > footer {
+  width: 100%;
+  max-width: 100%;
+}
+
+body > footer > nav {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 *, *:before, *:after {
@@ -47,27 +66,58 @@ header > nav {
   align-items: flex-end;
 }
 
-header > nav > img {
+footer > nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  margin-top: 2rem;
+}
+
+nav > img {
   display: inline;
   width: 200px;
 
 }
 
-header > nav > ul {
-  display: inline;
+nav > ul {
+  display: flex;
   margin: 0;
   padding: 0;
 }
 
-header > nav > ul > li {
-  display: inline;
+footer > nav > ul {
+  flex-direction: column;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+nav > ul > li {
+  list-style: none;
   margin-left: 2rem;
 }
 
-header > nav > ul > li a {
+footer > nav > ul > li {
+  margin: 0;
+}
+
+nav > ul > li a {
   text-decoration: none;
   vertical-align: text-bottom;
 }
+
+footer {
+  background-color: #3c3c3c;
+}
+
+footer * {
+  color: white;
+}
+
 
 a.button {
   background-color: #3c3c3c;

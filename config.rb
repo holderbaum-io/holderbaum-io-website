@@ -1,10 +1,3 @@
-# Activate and configure extensions
-# https://middlemanapp.com/advanced/configuration/#configuring-extensions
-
-activate :autoprefixer do |prefix|
-  prefix.browsers = "last 2 versions"
-end
-
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 
@@ -44,3 +37,13 @@ page '/*.txt', layout: false
 #   activate :minify_css
 #   activate :minify_javascript
 # end
+
+postcss = './node_modules/.bin/postcss \
+ source/stylesheets/site.css \
+ -o .tmp/dist/stylesheets/site.css'
+
+activate :external_pipeline,
+         name: :postcss,
+         command: build? ? postcss : postcss + ' --watch',
+         source: '.tmp/dist',
+         latency: 1

@@ -1,0 +1,6 @@
+html {
+  font-size: var(--foo);
+  box-sizing: border-box;
+  min-height: 100%;
+  height: 100%;
+}

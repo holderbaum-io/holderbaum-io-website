@@ -1,8 +1,8 @@
-html {
-  font-size: 20px;
-  box-sizing: border-box;
-  min-height: 100%;
-  height: 100%;
+@import '_test.css';
+
+:root {
+  --foo: 20px;
+  --bar: 980px;
 }
 
 body {
@@ -16,7 +16,7 @@ body {
 }
 
 body > * {
-  width: 980px;
+  width: var(--bar);
   max-width: 980px;
   margin: 0 auto;
 }

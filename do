@@ -25,6 +25,7 @@ function prepare_ci {
     install \
     -y \
     ruby \
+    ruby-dev \
     lftp \
     nodejs \
     npm
@@ -58,8 +59,6 @@ task_deploy() {
       open $DEPLOY_USER:$DEPLOY_PASS@www151.your-server.de; \
       mirror --reverse --verbose --delete build/ .; \
       "
-
-
 }
 
 usage() {

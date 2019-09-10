@@ -2,6 +2,11 @@
 
 set -eu
 
+ensure_npm() {
+  npm install
+}
+
+
 ensure_ruby() {
   local bundler_version
   bundler_version="$(tail -n1 Gemfile.lock |tr -d ' ')"
@@ -29,6 +34,7 @@ task_serve() {
 }
 
 task_build() {
+  ensure_npm
   ensure_ruby
 
   ./vendor/bin/middleman build

@@ -38,9 +38,7 @@ page '/*.txt', layout: false
 #   activate :minify_javascript
 # end
 
-postcss = './node_modules/.bin/postcss \
- source/stylesheets/site.css \
- -o .tmp/dist/stylesheets/site.css'
+postcss = 'bash build-css.sh'
 
 activate :external_pipeline,
          name: :postcss,

@@ -12,7 +12,6 @@ ensure_ruby() {
   bundler_version="$(tail -n1 Gemfile.lock |tr -d ' ')"
   if ! gem list -q bundler |grep -q "$bundler_version" >/dev/null;
   then
-    gem uninstall bundler
     gem install "bundler:$bundler_version"
   fi
   bundle install --path vendor/bundle --binstubs vendor/bin
@@ -21,10 +20,14 @@ ensure_ruby() {
 function prepare_ci {
   if [[ -z "${TRAVIS:=}" ]]; then return 0; fi
 
-  sudo apt-get \
+  apt-get update
+  apt-get \
     install \
     -y \
-    lftp
+    ruby \
+    lftp \
+    nodejs \
+    npm
 }
 
 task_serve() {
@@ -35,6 +38,8 @@ task_serve() {
 }
 
 task_build() {
+  prepare_ci
+
   ensure_npm
   ensure_ruby
 

@@ -1,0 +1,23 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header .Header-image {
+  max-width: 200px;
+}
+
+.Header .Header-links {
+  list-style: none;
+  display: flex;
+}
+
+.Header .Header-links > li + li {
+  margin-left: var(--spacer-3);
+}
+
+.Header a {
+  text-decoration: none;
+  color: var(--color-dark);
+  font-weight: 700;
+}

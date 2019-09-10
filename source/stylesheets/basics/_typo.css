@@ -1,0 +1,35 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+i, em {
+  font-style: italic;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+

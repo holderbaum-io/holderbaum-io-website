@@ -1,0 +1,20 @@
+:root {
+  --hero-image-gutter: 50px;
+}
+
+.Hero {
+}
+
+.Hero .container {
+  display: flex;
+}
+
+.Hero .Hero-image {
+  width: calc(var(--page-width) / 2 + var(--hero-image-gutter));
+  margin-right: calc(-1 * var(--hero-image-gutter));
+}
+
+.Hero .Hero-text {
+  width: calc(var(--page-width) / 2);
+}
+

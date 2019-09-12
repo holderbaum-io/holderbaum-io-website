@@ -1,0 +1,4 @@
+.Blank {
+  background: lightgray;
+  min-height: var(--spacer-3);
+}

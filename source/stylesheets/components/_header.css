@@ -1,4 +1,13 @@
 .Header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: var(--spacer-header);
+}
+
+.Header .container {
   display: flex;
   justify-content: space-between;
 }
@@ -10,6 +19,7 @@
 .Header .Header-links {
   list-style: none;
   display: flex;
+  align-items: center;
 }
 
 .Header .Header-links > li + li {

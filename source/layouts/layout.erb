@@ -26,31 +26,31 @@
     <%= stylesheet_link_tag "site" %>
   </head>
   <body>
-    <div class="Background">
-      <header class="container">
-        <nav class="Header">
+    <header>
+      <nav class="Header">
+        <div class="container">
           <img class="Header-image" src="/images/holderbaum.svg"></img>
           <ul class="Header-links">
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
-        </nav>
-      </header>
-      <main class="container">
-      <%= yield %>
-      </main>
-      <footer class="container">
-        <nav>
-          <img src="/images/holderbaum-light.svg"></img>
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Legal Notice</a></li>
-          </ul>
-        </nav>
-      </footer>
-    </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+    <%= yield %>
+    </main>
+    <footer>
+      <nav>
+        <img src="/images/holderbaum-light.svg"></img>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Legal Notice</a></li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>

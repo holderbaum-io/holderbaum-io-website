@@ -1,4 +1,11 @@
 .Blank {
-  background: lightgray;
+  background: #F5F5F5;
   min-height: var(--spacer-3);
+  color: gray;
+}
+
+.Blank p {
+  text-align: center;
+  padding-top: var(--spacer-3);
+  padding-bottom: var(--spacer-3);
 }

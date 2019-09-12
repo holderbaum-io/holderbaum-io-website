@@ -4,7 +4,7 @@
   --spacer-1: calc(var(--spacer) * 0.5);
   --spacer-2: calc(var(--spacer) * 1);
   --spacer-3: calc(var(--spacer) * 3);
-  --spacer-header: calc(var(--spacer) * 5);
+  --spacer-header: calc(var(--spacer) * 4);
   --spacer-section: calc(var(--spacer) * 4);
   --border-radius: 20px;
 }

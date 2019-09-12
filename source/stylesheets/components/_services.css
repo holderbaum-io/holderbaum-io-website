@@ -1,0 +1,10 @@
+.Services .Services-headline {
+  text-align: center;
+}
+
+.Services .Services-servicelist {
+  display: flex;
+}
+
+.Services .Services-service {
+}

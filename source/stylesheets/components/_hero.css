@@ -7,10 +7,11 @@
 
 .Hero .container {
   display: flex;
+  align-items: flex-start;
 }
 
 .Hero .Hero-image {
-  width: calc(var(--page-width) / 2 + var(--hero-image-gutter));
+  max-width: calc(var(--page-width) / 2 + var(--hero-image-gutter));
   margin-right: calc(-1 * var(--hero-image-gutter));
 }
 
@@ -18,4 +19,28 @@
   margin-top: calc(var(--spacer-header));
   margin-right: var(--spacer-3);
   width: calc(var(--page-width) / 2);
+}
+
+@media (max-width: 980px) {
+.Hero .container {
+  flex-direction: column-reverse;
+}
+
+.Hero .Hero-text {
+  margin: 0;
+  max-width: 100%;
+  align-self: center;
+  text-align: center;
+}
+
+.Hero .Hero-image {
+  max-width: 100%;
+  align-self: flex-end;
+}
+}
+
+@media (max-width: 500px) {
+.Hero .Hero-image {
+  margin: 0;
+}
 }

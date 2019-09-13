@@ -4,7 +4,14 @@
 
 .container {
   max-width: var(--page-width);
-  width: var(--page-width);
+  width: auto;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 980px) {
+  .container {
+    padding-left: var(--spacer-2);
+    padding-right: var(--spacer-2);
+  }
 }

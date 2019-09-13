@@ -8,4 +8,5 @@
   text-align: center;
   padding-top: var(--spacer-3);
   padding-bottom: var(--spacer-3);
+  margin: 0;
 }

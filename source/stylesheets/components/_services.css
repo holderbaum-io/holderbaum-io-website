@@ -4,16 +4,19 @@
 
 .Services .Services-servicelist {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .Services .Services-service {
   flex: 1;
-}
-
-.Services .Services-service + * {
-  margin-left: var(--spacer-3);
+  max-width: calc(980px / 3);
+  min-width: 250px;
+  margin: 0 var(--spacer-2);
 }
 
 .Services .Services-service img {
   width: 100%;
 }
+
+

@@ -32,3 +32,12 @@
 .Footer .Footer-links.Footer-links-emph a {
   font-weight: 700;
 }
+
+@media (max-width: 800px) {
+.Footer {
+  height: 100vh;
+}
+.Footer .container {
+  justify-content: space-between;
+}
+}

@@ -6,3 +6,7 @@ body {
 main > section + section {
   margin-top: var(--spacer-section);
 }
+
+a {
+  color: var(--color-primary);
+}
